@@ -5,9 +5,9 @@ Build Timing
 Make clear what's BAU knowledge and what's extra
 Agent setup with docker
 Pipeline config
-  Conditionals
-  Cancel last build
-  Trigger new pipeline
+Conditionals
+Cancel last build
+Trigger new pipeline
 
 Pipeline:
 Notify failure

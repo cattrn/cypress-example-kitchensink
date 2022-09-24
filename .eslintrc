@@ -2,13 +2,10 @@
   "extends": [
     "plugin:@cypress/dev/general",
     "plugin:@cypress/dev/tests",
-    "plugin:mocha/recommended"
+    "plugin:mocha/recommended",
+    "prettier"
   ],
-  "plugins": [
-    "cypress",
-    "@cypress/dev",
-    "mocha"
-  ],
+  "plugins": ["cypress", "@cypress/dev", "mocha"],
   "env": {
     "cypress/globals": true
   },

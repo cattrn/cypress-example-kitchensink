@@ -1,6 +1,6 @@
 /* eslint-env node */
 /* eslint-disable no-console */
-const { readFileSync, writeFileSync } = require('fs')
+const { readFileSync, writeFileSync } = require("fs");
 
 // On some CIs like Heroku CI the host assigns random PORT and
 // does not allow using default port 8080.
@@ -11,39 +11,39 @@ const { readFileSync, writeFileSync } = require('fs')
 // with "git checkout cypress/integration/examples" command
 
 if (!process.env.PORT) {
-  console.log('PORT environment variable is not set, nothing to do')
-  process.exit(0)
+  console.log("PORT environment variable is not set, nothing to do");
+  process.exit(0);
 }
 
 // replace both url and port if used in assertions, like
 // expect(location.port).to.eq('8080')
-const defaultPort = 8080
-const input = `localhost:${defaultPort}`
-const portRegex = new RegExp(`'${defaultPort}'`, 'g')
-const urlRegex = new RegExp(input, 'g')
-const newPort = `'${process.env.PORT}'`
-const newUrl = `localhost:${process.env.PORT}`
+const defaultPort = 8080;
+const input = `localhost:${defaultPort}`;
+const portRegex = new RegExp(`'${defaultPort}'`, "g");
+const urlRegex = new RegExp(input, "g");
+const newPort = `'${process.env.PORT}'`;
+const newUrl = `localhost:${process.env.PORT}`;
 
-console.log('replacing "%s" with "%s" in all spec files', input, newUrl)
+console.log('replacing "%s" with "%s" in all spec files', input, newUrl);
 
 const getSpecFilenames = async () => {
-  const globby = require('globby')
+  const globby = require("globby");
 
-  return await globby(['cypress/integration/**/*.spec.js'])
-}
+  return await globby(["cypress/integration/**/*.spec.js"]);
+};
 
 const replacePort = (filename) => {
-  const text = readFileSync(filename, 'utf8')
-  const replaced = text.replace(urlRegex, newUrl).replace(portRegex, newPort)
+  const text = readFileSync(filename, "utf8");
+  const replaced = text.replace(urlRegex, newUrl).replace(portRegex, newPort);
 
-  writeFileSync(filename, replaced, 'utf8')
-}
+  writeFileSync(filename, replaced, "utf8");
+};
 
 getSpecFilenames()
   .then((filenames) => {
-    filenames.map(replacePort)
+    filenames.map(replacePort);
   })
   .catch((e) => {
-    console.error(e.message)
-    process.exit(1)
-  })
+    console.error(e.message);
+    process.exit(1);
+  });

@@ -19,8 +19,8 @@ Cypress team has created a full workshop showing how to run Cypress on popular C
 
 **If you get stuck, here is more help:**
 
-* [Gitter Chat](https://gitter.im/cypress-io/cypress)
-* [Cypress Docs](https://on.cypress.io)
+- [Gitter Chat](https://gitter.im/cypress-io/cypress)
+- [Cypress Docs](https://on.cypress.io)
 
 ### 1. Fork this repo
 

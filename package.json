@@ -64,10 +64,12 @@
     "colon-names": "1.0.0",
     "cypress": "10.0.0",
     "eslint": "7.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "2.8.1",
     "eslint-plugin-json-format": "2.0.1",
     "eslint-plugin-mocha": "5.3.0",
     "globby": "11.1.0",
+    "prettier": "2.7.1",
     "start-server-and-test": "1.10.6"
   },
   "engines": {

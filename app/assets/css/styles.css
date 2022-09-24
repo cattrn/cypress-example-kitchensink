@@ -1,15 +1,15 @@
 body {
   padding-top: 0;
-  font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h4 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
 }
 
 code {
-  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 pre {
@@ -28,7 +28,7 @@ table {
 }
 
 pre code {
-  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   padding: 0;
 }
 
@@ -98,7 +98,7 @@ canvas {
 
 .home-list {
   list-style: none;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 35px 0;
   padding-left: 0;
   line-height: 28px;
@@ -152,7 +152,8 @@ li.header {
   border: 5px solid red;
 }
 
-.action-div, .rightclick-action-div {
+.action-div,
+.rightclick-action-div {
   cursor: pointer;
 }
 

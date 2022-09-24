@@ -6,7 +6,7 @@
  */
 
 (function (window) {
-  'use strict'
+  "use strict";
 
   /**
    * Creates a new Model instance and hooks up the storage.
@@ -14,8 +14,8 @@
    * @constructor
    * @param {object} storage A reference to the client side storage class
    */
-  function Model (storage) {
-    this.storage = storage
+  function Model(storage) {
+    this.storage = storage;
   }
 
   /**
@@ -25,16 +25,16 @@
    * @param {function} [callback] The callback to fire after the model is created
    */
   Model.prototype.create = function (title, callback) {
-    title = title || ''
-    callback = callback || function () {}
+    title = title || "";
+    callback = callback || function () {};
 
     let newItem = {
       title: title.trim(),
       completed: false,
-    }
+    };
 
-    this.storage.save(newItem, callback)
-  }
+    this.storage.save(newItem, callback);
+  };
 
   /**
    * Finds and returns a model in storage. If no query is given it'll simply
@@ -52,23 +52,23 @@
    * model.read({ foo: 'bar', hello: 'world' });
    */
   Model.prototype.read = function (query, callback) {
-    let queryType = typeof query
+    let queryType = typeof query;
 
-    callback = callback || function () {}
+    callback = callback || function () {};
 
-    if (queryType === 'function') {
-      callback = query
+    if (queryType === "function") {
+      callback = query;
 
-      return this.storage.findAll(callback)
+      return this.storage.findAll(callback);
     }
 
-    if (queryType === 'string' || queryType === 'number') {
-      query = parseInt(query, 10)
-      this.storage.find({ id: query }, callback)
+    if (queryType === "string" || queryType === "number") {
+      query = parseInt(query, 10);
+      this.storage.find({ id: query }, callback);
     } else {
-      this.storage.find(query, callback)
+      this.storage.find(query, callback);
     }
-  }
+  };
 
   /**
    * Updates a model by giving it an ID, data to update, and a callback to fire when
@@ -79,8 +79,8 @@
    * @param {function} callback The callback to fire when the update is complete.
    */
   Model.prototype.update = function (id, data, callback) {
-    this.storage.save(data, callback, id)
-  }
+    this.storage.save(data, callback, id);
+  };
 
   /**
    * Removes a model from storage
@@ -89,8 +89,8 @@
    * @param {function} callback The callback to fire when the removal is complete.
    */
   Model.prototype.remove = function (id, callback) {
-    this.storage.remove(id, callback)
-  }
+    this.storage.remove(id, callback);
+  };
 
   /**
    * WARNING: Will remove ALL data from storage.
@@ -98,8 +98,8 @@
    * @param {function} callback The callback to fire when the storage is wiped.
    */
   Model.prototype.removeAll = function (callback) {
-    this.storage.drop(callback)
-  }
+    this.storage.drop(callback);
+  };
 
   /**
    * Returns a count of all todos
@@ -109,24 +109,24 @@
       active: 0,
       completed: 0,
       total: 0,
-    }
+    };
 
     this.storage.findAll(function (data) {
       data.forEach(function (todo) {
         if (todo.completed) {
-          todos.completed++
+          todos.completed++;
         } else {
-          todos.active++
+          todos.active++;
         }
 
-        todos.total++
-      })
+        todos.total++;
+      });
 
-      callback(todos)
-    })
-  }
+      callback(todos);
+    });
+  };
 
   // Export to window
-  window.app = window.app || {}
-  window.app.Model = Model
-})(window)
+  window.app = window.app || {};
+  window.app.Model = Model;
+})(window);
