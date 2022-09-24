@@ -32,7 +32,9 @@
     "local:open": "start-test 8080 cy:open",
     "local:run": "start-test 8080 cy:run",
     "local:run:record": "start-test 8080 cy:run:record",
-    "ci:set-port": "node ./scripts/set-port"
+    "ci:set-port": "node ./scripts/set-port",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -45,11 +47,20 @@
   },
   "homepage": "https://github.com/cattrn/cypress-example-kitchensink#readme",
   "dependencies": {
-    "npm-run-all": "^4.1.2",
     "serve": "14.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.1",
     "@cypress/eslint-plugin-dev": "5.0.0",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/html": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5",
     "colon-names": "1.0.0",
     "cypress": "10.0.0",
     "eslint": "7.0.0",
