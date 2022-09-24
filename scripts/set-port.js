@@ -26,11 +26,10 @@ const newUrl = `localhost:${process.env.PORT}`
 
 console.log('replacing "%s" with "%s" in all spec files', input, newUrl)
 
-
-const getSpecFilenames = () => {
+const getSpecFilenames = async () => {
   const globby = require('globby')
 
-  return globby(['cypress/integration/**/*.spec.js'])
+  return await globby(['cypress/integration/**/*.spec.js'])
 }
 
 const replacePort = (filename) => {
@@ -48,4 +47,3 @@ getSpecFilenames()
     console.error(e.message)
     process.exit(1)
   })
-
