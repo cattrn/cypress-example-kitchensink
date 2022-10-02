@@ -1,19 +1,24 @@
-1. Key concepts overview - Pipelines, builds & agents
+1. [ ] Key concepts overview - Pipelines, builds & agents
+1. [ ] How Elements Storefront builds work
+1. [ ] Try to create a new pipeline
+1. [ ] Agents
+1. [ ] Configure pipeline
+1. [ ] YAML Steps & example build using GUI
+1. [ ] .yml pipeline
+    1. [ ] Steps & step types
+    1. [ ] Dependencies
+    1. [ ] Conditionals (e.g. skip tests)
+    1. [ ] Parallelism
+    1. [ ] Triggering new pipelines
+1. [ ] Other considerations
+    1. [ ] Build timing
 
-No. of agents & parallelism
-Build Timing
-Make clear what's BAU knowledge and what's extra
-Agent setup with docker
-Pipeline config
-Conditionals
-Cancel last build
-Trigger new pipeline
 
 Pipeline:
-Notify failure
-Build
-Linting
-Prettier
-Storybook
-Cypress tests
-Deploy
+[ ] Notify failure
+[ ] Build
+[ ] Linting
+[ ] Prettier
+[ ] Storybook
+[ ] Cypress tests
+[ ] Deploy
