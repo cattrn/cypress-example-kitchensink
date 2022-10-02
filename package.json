@@ -32,7 +32,6 @@
     "local:open": "start-test 8080 cy:open",
     "local:run": "start-test 8080 cy:run",
     "local:run:record": "start-test 8080 cy:run:record",
-    "ci:set-port": "node ./scripts/set-port",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
