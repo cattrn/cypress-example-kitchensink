@@ -12,5 +12,5 @@ storybook-static
 env
 .DS_Store
 
-# Ignore all HTML files:
-*.html
+# Third-party js files
+app/assets/js/vendor
