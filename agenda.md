@@ -14,7 +14,6 @@
    1. [ ] Build timing
 
 Pipeline:
-[ ] Build
 [ ] Linting
 [ ] Prettier
 [ ] Cypress tests

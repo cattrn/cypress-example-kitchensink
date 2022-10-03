@@ -1,11 +1,10 @@
 steps:  
-  - label: ":npm: Build"
-    command: npm install
-    
-  - wait
-
   - label: ":eslint: ESLint"
-    command: npm run lint
+    commands:
+    - npm install
+    - npm run lint
 
   - label: ":prettier: Prettier"
-    command: npm run prettier
+    commands:
+    - npm install
+    - npm run prettier
