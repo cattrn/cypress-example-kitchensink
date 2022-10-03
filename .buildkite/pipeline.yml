@@ -10,7 +10,6 @@ steps:
       - npm run prettier
   
   - label: ":cypress: E2E Tests"
-    parallelism: 3
     if: build.message !~ /\[skip tests\]/
     command:
       - npm install
@@ -18,3 +17,11 @@ steps:
     artifact_paths:
       - "cypress/screenshots/**/*"
       - "cypres/videos/**/*"
+
+  - wait
+
+  - label: ":heroku: Deploy"
+    branches: "main"
+    command:
+      - "heroku git:remote --app buildkite-personal-testing"
+      - "git push heroku "$$BUILDKITE_COMMIT":main"
