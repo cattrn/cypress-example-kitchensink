@@ -1,6 +1,6 @@
-1. [ ] Key concepts overview - Pipelines, builds & agents
-1. [ ] How Elements Storefront builds work
-1. [ ] Create a new pipeline
+1. [x] Key concepts overview - Pipelines, builds & agents
+1. [x] How Elements Storefront builds work
+1. [x] Create a new pipeline
 1. [ ] Configure pipeline
 1. [ ] Agents
 1. [ ] .yml pipeline
@@ -11,6 +11,7 @@
    1. [ ] Triggering new pipelines
 1. [ ] Other considerations
    1. [ ] Build timing
+1. [ ] How Elements Storefront builds work more!!
 
 Pipeline:
 [ ] Linting
