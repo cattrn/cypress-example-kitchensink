@@ -1,10 +1,10 @@
-steps:  
+steps:
   - label: ":eslint: ESLint"
-    commands:
-    - npm install
-    - npm run lint
+    command:
+      - npm install
+      - npm run lint
 
   - label: ":prettier: Prettier"
-    commands:
-    - npm install
-    - npm run prettier
+    command:
+      - npm install
+      - npm run prettier

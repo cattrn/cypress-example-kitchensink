@@ -8,6 +8,7 @@ export const createPage = () => {
 
   const rerenderHeader = () => {
     const wrapper = document.getElementsByTagName("article")[0];
+
     wrapper.replaceChild(createHeaderElement(), wrapper.firstChild);
   };
 

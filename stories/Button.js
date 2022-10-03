@@ -8,6 +8,7 @@ export const createButton = ({
   onClick,
 }) => {
   const btn = document.createElement("button");
+
   btn.type = "button";
   btn.innerText = label;
   btn.addEventListener("click", onClick);
@@ -15,6 +16,7 @@ export const createButton = ({
   const mode = primary
     ? "storybook-button--primary"
     : "storybook-button--secondary";
+
   btn.className = ["storybook-button", `storybook-button--${size}`, mode].join(
     " "
   );

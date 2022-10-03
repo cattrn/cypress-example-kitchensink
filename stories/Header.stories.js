@@ -17,6 +17,7 @@ export default {
 const Template = (args) => createHeader(args);
 
 export const LoggedIn = Template.bind({});
+
 LoggedIn.args = {
   user: {
     name: "Jane Doe",
@@ -24,4 +25,5 @@ LoggedIn.args = {
 };
 
 export const LoggedOut = Template.bind({});
+
 LoggedOut.args = {};

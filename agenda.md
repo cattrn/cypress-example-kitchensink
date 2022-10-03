@@ -7,7 +7,6 @@
    1. [ ] Steps & step types
    1. [ ] Dependencies
    1. [ ] Conditionals (e.g. skip tests)
-   1. [ ] Allowing retries
    1. [ ] Parallelism
    1. [ ] Triggering new pipelines
 1. [ ] Other considerations
