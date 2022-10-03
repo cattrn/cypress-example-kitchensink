@@ -1,3 +1,9 @@
-steps:
-  - label: ":console: Testing"
-    command: echo "Hello, world!"
+steps:  
+  - label: ":npm: Build"
+    command: npm ci
+
+  - label: ":eslint: ESLint"
+    command: npm run lint
+
+  - label: ":prettier: Prettier"
+    command: npm run prettier
