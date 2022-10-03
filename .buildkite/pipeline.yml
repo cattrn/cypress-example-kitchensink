@@ -1,0 +1,3 @@
+steps:
+  - label: "Example step"
+    command: echo "Hello, world!"
