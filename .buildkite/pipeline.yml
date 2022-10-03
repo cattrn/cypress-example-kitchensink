@@ -1,3 +1,6 @@
 steps:
-  - label: "Example step"
-    command: echo "Hello, world!"
+  - label: ":eslint: Lint"
+    command: npm run lint
+
+  - label: ":prettier: Prettier"
+    command: npm run prettier

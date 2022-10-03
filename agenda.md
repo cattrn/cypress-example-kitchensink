@@ -4,7 +4,7 @@
 1. [x] Configure pipeline
 1. [x] Agents
 1. [ ] .yml pipeline
-   1. [ ] Steps & step types
+   1. [x] Steps & step types
    1. [ ] Dependencies
    1. [ ] Conditionals (e.g. skip tests)
    1. [ ] Parallelism
