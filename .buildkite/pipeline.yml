@@ -1,13 +1,11 @@
 steps:  
   - label: ":npm: Build"
-    command: npm ci
-    key: "build"
+    command: npm install
+    
+  - wait
 
   - label: ":eslint: ESLint"
     command: npm run lint
-    depends_on: "build"
 
   - label: ":prettier: Prettier"
     command: npm run prettier
-    depends_on: "build"
-    
