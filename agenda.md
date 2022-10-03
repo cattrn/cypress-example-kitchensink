@@ -14,8 +14,8 @@
 1. [ ] How Elements Storefront builds work more!!
 
 Pipeline:
-[ ] Linting
-[ ] Prettier
+[x] Linting
+[x] Prettier
 [ ] Cypress tests
 [ ] Storybook
 [ ] Deploy

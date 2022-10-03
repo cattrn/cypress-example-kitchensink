@@ -8,3 +8,9 @@ steps:
     command:
       - npm install
       - npm run prettier
+
+  - label: ":cypress: E2E Tests"
+    command:
+      - npm install
+      - npm run test:ci
+    if: build.message !~ /\[skip tests\]/
