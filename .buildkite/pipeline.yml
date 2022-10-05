@@ -1,14 +1,15 @@
 steps:
-  - label: "Test"
-    command: npm install
   # - label: ":docker: Docker Test"
   #   command: echo "Hello, world!"
   #   plugins:
   #     - docker-compose#v3.0.3:
   #         run: app
   
-  # - label: ":eslint: ESLint"
-  #   command: npm run lint
+  - label: ":eslint: ESLint"
+    command: npm run lint
+    plugins:
+      - docker-compose#v3.0.3:
+          run: unit
   
   # - label: ":prettier: Prettier"
   #   command: npm run prettier

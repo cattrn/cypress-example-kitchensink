@@ -1,9 +1,11 @@
 version: "3.8"
 services:
-  app:
-    build: .
-    working_dir: /home/node/app
-    volumes:
-      - .:/app
-    ports:
-      - 8080
+  unit:
+    build:
+      context: .
+      target: unit
+      
+    # volumes:
+    #   - .:/app
+    # ports:
+    #   - 8080
