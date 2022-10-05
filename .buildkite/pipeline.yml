@@ -4,3 +4,15 @@ steps:
     plugins:
       - docker-compose#v3.0.3:
           run: app
+  
+  # - label: ":eslint: ESLint"
+  #   command: npm run lint
+  
+  # - label: ":prettier: Prettier"
+  #   command: npm run prettier
+
+  # Cypress next
+
+  # Then storybook build
+
+  # Heroku deploy
