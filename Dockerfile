@@ -14,10 +14,10 @@ COPY package.json package-lock.json .npmrc ./
 RUN npm ci
 
 COPY app ./app
-COPY serve.json ./
-# copy Cypress tests
-COPY cypress.config.js cypress ./
 COPY cypress ./cypress
+COPY serve.json \
+     cypress.config.js \
+     cypress ./
 
 # avoid many lines of progress bars during install
 # https://github.com/cypress-io/cypress/issues/1243
@@ -31,13 +31,18 @@ RUN $(npm bin)/cypress verify
 FROM node:16 AS unit
 
 WORKDIR /app
-
 COPY package.json package-lock.json .npmrc ./
+
+ENV CYPRESS_INSTALL_BINARY=0
 
 RUN npm ci
 
 COPY app ./app
-COPY serve.json ./
+COPY .eslintrc \
+     .eslintignore \
+     .prettierrc.json \
+     .prettierignore \
+     serve.json ./
 
 
 # FROM

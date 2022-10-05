@@ -4,7 +4,11 @@ services:
     build:
       context: .
       target: unit
-      
+  cypress:
+    build:
+      context: .
+      target: cypress
+
     # volumes:
     #   - .:/app
     # ports:
