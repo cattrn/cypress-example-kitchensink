@@ -8,7 +8,7 @@ RUN node --version
 RUN npm --version
 WORKDIR /home/node/app
 # copy our test application
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json .npmrc ./
 
 # install NPM dependencies and Cypress binary
 RUN npm ci
@@ -32,7 +32,7 @@ FROM node:16 AS unit
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json .npmrc ./
 
 RUN npm ci
 
