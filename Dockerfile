@@ -43,9 +43,3 @@ COPY .eslintrc \
      .prettierrc.json \
      .prettierignore \
      serve.json ./
-
-
-# FROM
-# RUN
-# WORKDIR
-# COPY
