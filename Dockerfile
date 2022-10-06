@@ -6,7 +6,7 @@ FROM cypress/base:16 AS cypress
 
 RUN node --version
 RUN npm --version
-WORKDIR /home/node/app
+WORKDIR /app
 # copy our test application
 COPY package.json package-lock.json .npmrc ./
 
@@ -15,6 +15,7 @@ RUN npm ci
 
 COPY app ./app
 COPY cypress ./cypress
+COPY scripts ./scripts
 COPY serve.json \
      cypress.config.js \
      cypress ./
