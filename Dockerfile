@@ -38,7 +38,11 @@ ENV CYPRESS_INSTALL_BINARY=0
 
 RUN npm ci
 
+COPY .storybook ./.storybook
 COPY app ./app
+COPY cypress ./cypress
+COPY scripts ./scripts
+COPY stories ./stories
 COPY .eslintrc \
      .eslintignore \
      .prettierrc.json \
