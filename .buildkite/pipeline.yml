@@ -4,7 +4,7 @@ steps:
     plugins:
       - docker-compose#v3.0.3:
           run: unit
-  
+
   - label: ":prettier: Prettier"
     command: npm run prettier
     plugins:

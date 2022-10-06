@@ -11,7 +11,6 @@
   },
   "rules": {
     "indent": ["error", 2, { "SwitchCase": 1, "MemberExpression": "off" }],
-    "mocha/no-exclusive-tests": "error",
-    "object-curly-spacing": ["error", "always"]
+    "mocha/no-exclusive-tests": "error"
   }
 }

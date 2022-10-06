@@ -19,4 +19,5 @@ Linting
 Prettier
 Cypress tests
 Storybook
+
 <!-- Deploy -->
