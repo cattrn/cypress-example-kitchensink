@@ -26,6 +26,7 @@
     "local:open": "start-test 8080 cy:open",
     "local:run": "start-test 8080 cy:run",
     "storybook": "start-storybook -p 6006",
+    "storybook:ci": "start-storybook -p 6006 --ci",
     "build-storybook": "build-storybook"
   },
   "repository": {

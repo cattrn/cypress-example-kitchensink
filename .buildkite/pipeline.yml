@@ -17,6 +17,19 @@ steps:
       - docker-compose#v3.0.3:
           run: cypress
 
-  # Then storybook build
+  - label: ":storybook: Build Storybook"
+    command: npm run build-storybook
+    key: storybook-build
+    artifact_paths: storybook-static/**/*
+    plugins:
+      - docker-compose#v3.0.3:
+          run: unit
+
+  - label: ":storybook: Run Storybook"
+    command: npm run storybook:ci
+    depends_on: storybook-build
+    plugins:
+      - docker-compose#v3.0.3:
+          run: unit
 
   # Heroku deploy
