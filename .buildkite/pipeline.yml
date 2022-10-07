@@ -10,3 +10,9 @@ steps:
     plugins:
       - docker-compose#v3.8.0:
           run: unit
+
+  - label: ":cypress: E2E Tests"
+    command: npm run test:ci
+    plugins:
+      - docker-compose#v3.8.0:
+          run: cypress
