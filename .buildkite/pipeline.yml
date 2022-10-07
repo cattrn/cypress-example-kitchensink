@@ -8,11 +8,11 @@ steps:
       - docker-compose#v3.8.0:
           run: unit
 
-  - label: ":prettier: Prettier"
-    command: npm run prettier
-    plugins:
-      - docker-compose#v3.8.0:
-          run: unit
+  # - label: ":prettier: Prettier"
+  #   command: npm run prettier
+  #   plugins:
+  #     - docker-compose#v3.8.0:
+  #         run: unit
 
   - label: ":cypress: E2E Tests"
     command: npm run test:ci
