@@ -1,4 +1,7 @@
 steps:
+  - command: buildkite-agent annotate --style "info" "Good luck on your build! :star-struck:"
+    if: build.env("DISPLAY_MESSAGE") == "true"
+
   - label: ":eslint: ESLint"
     command: npm run lint
     plugins:
