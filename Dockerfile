@@ -2,23 +2,49 @@
 # https://documentation.codeship.com/pro/languages-frameworks/nodejs/
 
 # use Cypress provided image with all dependencies included
-FROM cypress/base:10
+FROM cypress/base:16 AS cypress
+
 RUN node --version
 RUN npm --version
-WORKDIR /home/node/app
+WORKDIR /app
 # copy our test application
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json .npmrc ./
+
+# install NPM dependencies and Cypress binary
+RUN npm ci
+
 COPY app ./app
-COPY serve.json ./
-# copy Cypress tests
-COPY cypress.config.js cypress ./
 COPY cypress ./cypress
+COPY scripts ./scripts
+COPY serve.json \
+     cypress.config.js \
+     cypress ./
 
 # avoid many lines of progress bars during install
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
 
-# install NPM dependencies and Cypress binary
-RUN npm ci
 # check if the binary was installed successfully
 RUN $(npm bin)/cypress verify
+
+# --------------------
+
+FROM node:16 AS unit
+
+WORKDIR /app
+COPY package.json package-lock.json .npmrc ./
+
+ENV CYPRESS_INSTALL_BINARY=0
+
+RUN npm ci
+
+COPY .storybook ./.storybook
+COPY app ./app
+COPY cypress ./cypress
+COPY scripts ./scripts
+COPY stories ./stories
+COPY .eslintrc \
+     .eslintignore \
+     .prettierrc.json \
+     .prettierignore \
+     serve.json ./
