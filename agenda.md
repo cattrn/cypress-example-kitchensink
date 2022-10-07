@@ -21,3 +21,6 @@ Cypress tests
 Storybook
 
 <!-- Deploy -->
+
+EXTRA:
+- play around with clean up commands

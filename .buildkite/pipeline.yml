@@ -1,10 +1,12 @@
 steps:
-  - command: npm ci
-
-  - wait
-
   - label: ":eslint: ESLint"
     command: npm run lint
+    plugins:
+      - docker-compose#v3.8.0:
+          run: unit
 
   - label: ":prettier: Prettier"
     command: npm run prettier
+    plugins:
+      - docker-compose#v3.8.0:
+          run: unit
