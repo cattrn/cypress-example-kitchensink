@@ -1,6 +1,10 @@
 steps:
+  - command: npm ci
+
+  - wait
+
   - label: ":eslint: ESLint"
     command: npm run lint
 
-  - label: "prettier: Prettier"
+  - label: ":prettier: Prettier"
     command: npm run prettier
