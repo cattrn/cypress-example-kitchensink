@@ -28,10 +28,12 @@ steps:
   - wait
 
   - label: ":heroku: Deploy"
+    command:
+      - heroku git:remote --app buildkite-personal-testing
+      - git push heroku "$$BUILDKITE_COMMIT":main
     branches: main
-    commands:
-      - "heroku git:remote --app my-app"
-      - "git push heroku "$$BUILDKITE_COMMIT":master"
 
-  - command: buildkite-agent annotate --style "success" "Nice job! :star-struck: You can find your deployed project at https://buildkite-personal-testing.herokuapp.com/"
+  - wait
+
+  - command: buildkite-agent annotate --style "success" "Nice job! You can find your deployed project at https://buildkite-personal-testing.herokuapp.com/"
     if: build.state == "passed" && build.branch == "main"
