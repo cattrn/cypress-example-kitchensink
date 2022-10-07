@@ -27,7 +27,9 @@
     "local:run": "start-test 8080 cy:run",
     "storybook": "start-storybook -p 6006",
     "storybook:ci": "start-storybook -p 6006 --ci",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test-storybook": "test-storybook",
+    "test-storybook:ci": "run-p --race storybook:ci test-storybook"
   },
   "repository": {
     "type": "git",
@@ -53,6 +55,7 @@
     "@storybook/builder-webpack4": "^6.5.12",
     "@storybook/html": "^6.5.12",
     "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/test-runner": "^0.7.2",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
     "cypress": "10.3.0",
