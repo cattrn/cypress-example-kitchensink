@@ -1,2 +1,6 @@
 steps:
-  - command: echo "Hello, world!"
+  - label: ":eslint: ESLint"
+    command: npm run lint
+
+  - label: "prettier: Prettier"
+    command: npm run prettier
