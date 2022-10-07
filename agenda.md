@@ -1,8 +1,8 @@
-1. [ ] Key concepts overview - Pipelines, builds & agents
-1. [ ] Create a new pipeline
-1. [ ] Configure pipeline
+1. [x] Key concepts overview - Pipelines, builds & agents
+1. [x] Create a new pipeline
+1. [x] Configure pipeline
 1. [ ] Agents
-   1. [ ] Local
+   1. [x] Local
    1. [ ] Docker
 1. [ ] .yml pipeline
    1. [ ] Steps & step types
