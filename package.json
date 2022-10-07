@@ -54,7 +54,7 @@
     "@storybook/manager-webpack4": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
-    "cypress": "10.0.0",
+    "cypress": "10.3.0",
     "eslint": "7.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "2.8.1",

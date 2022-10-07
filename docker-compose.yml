@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  unit:
+    build:
+      context: .
+      target: unit
+  cypress:
+    build:
+      context: .
+      target: cypress

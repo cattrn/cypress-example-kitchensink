@@ -1,0 +1,21 @@
+steps:
+  - if: build.env("DISPLAY_MESSAGE") == "true"
+    command: buildkite-agent annotate --style "info" "Hi there, great job!"
+
+  - label: ":eslint: ESLint"
+    command: npm run lint
+    plugins:
+      - docker-compose#v3.8.0:
+          run: unit
+
+  - label: ":prettier: Prettier"
+    command: npm run prettier
+    plugins:
+      - docker-compose#v3.8.0:
+          run: unit
+
+  - label: ":cypress: E2E Tests"
+    command: npm run test:ci
+    plugins:
+      - docker-compose#v3.8.0:
+          run: cypress
