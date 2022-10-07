@@ -17,17 +17,10 @@ steps:
       - docker-compose#v3.0.3:
           run: cypress
 
-  - label: ":storybook: Test Storybook Build"
+  - label: ":storybook: Storybook Build"
     command: npm run build-storybook
     key: storybook-build
     artifact_paths: storybook-static/**/*
-    plugins:
-      - docker-compose#v3.0.3:
-          run: unit
-
-  - label: ":storybook: Test Stories"
-    command: npm run test-storybook:ci
-    depends_on: storybook-build
     plugins:
       - docker-compose#v3.0.3:
           run: unit
